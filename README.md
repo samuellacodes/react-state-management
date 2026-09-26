@@ -1,45 +1,47 @@
-# React + TypeScript + Vite
+# React Context and Reducer Activity
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React and TypeScript task manager demonstrating two state-management patterns:
 
-Currently, two official plugins are available:
+- `useContext` shares the selected theme across the app.
+- `useReducer` manages task additions and removals with typed actions.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Toggle between light and dark themes from the navigation bar.
+- Add tasks with the button or Enter, and remove tasks from the list.
+- Keep theme state, reducer logic, UI components, and styles in separate modules.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project Structure
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  # React State Management: Theme Switcher and Task Manager
-
-  A React and TypeScript app demonstrating global theme state with the Context API and task state with `useReducer`.
-
-  ## Features
-
-  - Switch between light and dark themes using a typed context and custom hook.
-  - Add tasks, including by pressing Enter, and remove them from the task list.
-  - Keep the reducer, context, components, constants, and styles in separate modules.
-
-  ## Run Locally
-
-  Requires Node.js and npm.
-
-  ```bash
-  npm install
-  npm run dev
-  ```
-
-  Open the local URL printed by Vite. To verify the production build and lint rules, run:
-
-  ```bash
-  npm run build
-  npm run lint
-  ```
+```text
+src/
+	components/  Navbar and TaskManager UI and styles
+	constants/   Theme values
+	context/     Theme provider and custom hook
+	reducers/    Typed task reducer
 ```
+
+## Theme Palette
+
+| Theme | Background | Text | Button |
+| --- | --- | --- | --- |
+| Light | `#FFFFFF` | `#000000` | `#1E90FF` |
+| Dark | `#242629` | `#FFFFFF` | `#85D1B0` |
+
+## Run Locally
+
+Requires Node.js and npm.
+
+```bash
+npm install
+npm run dev
+```
+
+## Verify
+
+```bash
+npm run build
+npm run lint
+```
+
+The repository ignores `node_modules`; install dependencies with `npm install` after cloning.
